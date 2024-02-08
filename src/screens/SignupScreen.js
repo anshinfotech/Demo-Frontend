@@ -24,10 +24,6 @@ export default function SignupScreen() {
   const { userInfo } = state;
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      toast.error('Passwords do not match');
-      return;
-    }
     try {
       const { data } = await Axios.post('https://demo-backend-catq.onrender.com/api/users/signup', {
         name,
