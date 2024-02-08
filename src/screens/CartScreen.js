@@ -18,7 +18,7 @@ export default function CartScreen() {
   } = state;
 
   const updateCartHandler = async (item, quantity) => {
-    const { data } = await axios.get(`http://localhost:4000/api/products/${item._id}`);
+    const { data } = await axios.get(`https://demo-backend-catq.onrender.com/api/products/${item._id}`);
     ctxDispatch({
       type: 'CART_ADD_ITEM',
       payload: { ...item, quantity },

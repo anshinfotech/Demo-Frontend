@@ -37,7 +37,7 @@ export default function ProfileScreen() {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        'http://localhost:4000/api/users/profile',
+        'https://demo-backend-catq.onrender.com/api/users/profile',
         {
           name,
           email,
