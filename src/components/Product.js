@@ -35,7 +35,7 @@ function Product(props) {
         </Link>
         <Rating rating={product.rating} numReviews={product.numReviews} />
         <Card.Text>&#8377;{product.price}</Card.Text>
-        
+        <Card.Text>Qunatity :{product.countInStock}</Card.Text>
           <Button onClick={() => addToCartHandler(product)} id="card-btn">Add to cart</Button>
       </Card.Body>
     </Card>
