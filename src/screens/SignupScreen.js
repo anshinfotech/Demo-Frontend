@@ -18,6 +18,7 @@ export default function SignupScreen() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -29,6 +30,7 @@ export default function SignupScreen() {
         name,
         email,
         password,
+        phone
       });
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
@@ -62,6 +64,15 @@ export default function SignupScreen() {
             type="email"
             required
             onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="phone">
+          <Form.Label>Phone</Form.Label>
+          <Form.Control
+            type="text"
+            maxLength={10}
+            required
+            onChange={(e) => setPhone(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
